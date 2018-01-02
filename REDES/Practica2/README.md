@@ -44,12 +44,17 @@ $ip route add default via 172.16.0.2
 ### Estados de una conexión TCP
 
 *********************** **Ejercicio 1** ***********************
+
 **->Netcat**
+
 Network swiss army knife
+
 **->Netstat**
+
 Print network connections, routing tables, interface statis-tics, masquerade connections, and multicast memberships
 
 *********************** **Ejercicio 2** ***********************
+
 *VM1:*
 <pre>
 <code>$nc -l -p 7777
@@ -63,6 +68,7 @@ tcp6 0 0 [::]:7777 [::]:* LISTEN
 </code></pre>
 
 *********************** **Ejercicio 3** ***********************
+
 a)
 
 *VM1:*
@@ -183,6 +189,7 @@ Resultado:
 
 
 *********************** **Ejercicio 6** ***********************
+
 *VM2:*
 <pre>
 <code>$nc 192.168.0.1 7778
@@ -196,6 +203,7 @@ Resultado:
 ### Introducción a la seguridad del protocolo TCP
 
 *********************** **Ejercicio 1** ***********************
+
 *VM2:*
 <pre>
 <code>$hping3 --flood --rand-source -p 23 --syn 192.168.0.1
@@ -237,6 +245,7 @@ Resultado:
 
 
 *********************** **Ejercicio 1** ***********************
+
 *VM1:*
 <pre>
 <code>$nc -l -p 7777
@@ -265,7 +274,9 @@ nc: 192.168.0.1 7777 open
 *********************** **Ejercicio 1** ***********************
 
 **Escalado de la ventana** (net.ipv4.tcp_window_scaling=1): Permite aumentar el tamaño de la RW a mas de 64K, algo necesario para altas velocidades de transmision con alta latencia.
+
 **Marcas de tiempo** (net.ipv4.tcp_timestamps=1): Sirven para ayudar a TCP a determinar en que orden se enviaron los paquetes.
+
 **ACKs Selectivos** (net.ipv4.tcp_sack=1): Sirve para activar los SACK: Selective-ACK confirman segmentos fuera de orden, no reemplazan los ACK y son implementados como opción ACK.
 
 *********************** **Ejercicio 2** ***********************
