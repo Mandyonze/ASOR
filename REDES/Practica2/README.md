@@ -11,7 +11,7 @@
 ### Topología
 ![topología](topologia.png)
 
-## Preparación del entorno para la práctica
+### Preparación del entorno para la práctica
 
 *VM1:*
 <pre>
