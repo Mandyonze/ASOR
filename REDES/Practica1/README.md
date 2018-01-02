@@ -9,7 +9,7 @@
 ### Topología
 ![topología](topologia.png)
 ### Configuración Estática
-**Ejercicio 1**
+*********************** **Ejercicio 1** ***********************
 
 *VM1:*
 <pre>
@@ -24,7 +24,7 @@ link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 link/ether 08:00:27:cb:50:0b brd ff:ff:ff:ff:ff:f
 </code></pre>
 
-**Ejercicio 2**
+*********************** **Ejercicio 2** ***********************
 
 *VM1:*
 <pre>
@@ -49,7 +49,7 @@ $ip a add 192.168.0.2/24 dev eth1
 $ip a add 192.168.0.1/24 dev eth0
 </code></pre>
 
-**Ejercicio 3**
+*********************** **Ejercicio 3** ***********************
 <pre>
 <code>$ping 10.0.0.2 -c 2
 </code></pre>
@@ -58,7 +58,7 @@ Resultado:
 
 ![Tabla 1](tabla1.png)
 
-**Ejercicio 4**
+*********************** **Ejercicio 4** ***********************
 
 *VM1:*
 <pre>
@@ -77,7 +77,7 @@ Stale:
 
 </code></pre>
 
-**Ejercicio 5**
+*********************** **Ejercicio 5** ***********************
 
 *VM1:*
 <pre>
@@ -90,14 +90,14 @@ Resultado:
 
 ### Encaminamiento Estático
 
-**Ejercicio 1**
+*********************** **Ejercicio 1** ***********************
 
 *VM3:*
 <pre>
 <code>$sysctl net.ipv4.ip_forward=1
 </code></pre>
 
-**Ejercicio 2**
+*********************** **Ejercicio 2** ***********************
 
 *VM1:*
 <pre>
@@ -109,7 +109,7 @@ Resultado:
 <code>$ip route add default via 10.0.0.3
 </code></pre>
 
-**Ejercicio 3**
+*********************** **Ejercicio 3** ***********************
 
 *VM4:*
 <pre>
@@ -117,7 +117,8 @@ Resultado:
 $ping -c 10.0.0.1
 </code></pre>
 
-**Ejercicio 4**
+*********************** **Ejercicio 4** ***********************
+
 *VM4:*
 <pre>
 <code>$ping 10.0.0.1 -c 2
@@ -135,7 +136,8 @@ Red 192.168.0.0/24 - VM1
 
 ### Configuración Dinámica de Hosts
 
-**Ejercicio 1**
+*********************** **Ejercicio 1** ***********************
+
 *VM1:*
 <pre>
 <code>$ip a del 10.0.0.1/24 dev eth0
@@ -149,7 +151,7 @@ Red 192.168.0.0/24 - VM1
 <code>$ip a del 192.168.0.1/24 dev eth0
 </code></pre>
 
-**Ejercicio 2**
+*********************** **Ejercicio 2** ***********************
 
 *VM3:*
 <pre>
@@ -171,7 +173,8 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
 $service isc-dhcp-server start
 </code></pre>
 
-**Ejercicio 3**
+*********************** **Ejercicio 3** ***********************
+
 *VM1:*
 <pre>
 <code>$dhclient -d eth0
@@ -181,13 +184,13 @@ Resultado:
 
 ![Tabla 4](tabla4.png)
 
-**Ejercicio 4**
+*********************** **Ejercicio 4** ***********************
 Resultado:
 <pre>
 <code>El request se hace del Router 3 al Host (VM1) sirve para comprobar que la ip ofertada está en la misma red.
 </code></pre>
 
-**Ejercicio 5**
+*********************** **Ejercicio 5** ***********************
 
 *VM4:*
 <pre>
@@ -200,7 +203,7 @@ iface eth0 inet dhcp
 </code></pre>
 
 
-**Ejercicio 5**
+*********************** **Ejercicio 5** *********************** 
 
 *VM4:*
 <pre>
