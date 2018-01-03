@@ -1,4 +1,4 @@
-# Práctica 1.1.Protocolo IPv4. Servicio DHCP
+# Práctica 1.2.Conceptos Avanzados de TCP
 
 ## Tabla de contenido
 - [Topología](#topología).
