@@ -5,8 +5,8 @@
 - [Preparación del entorno para la práctica](#preparación-del-entorno-para-la-práctica).
 - [Cliente DNS](#cliente-dns).
 - [Servidor DNS](#servidor-dns).
-- [](#).
-
+- - [Zona Directa Forward](#zona-directa-forward).
+- - [Zona Inversa Inverse](#zona-inversa-inverse).
 
 ### Topología
 ![topología](topologia.png)
@@ -27,6 +27,10 @@ $ip a add 192.168.0.2/24 dev eth0
 $ip route add default via 192.168.0.3
 </code></pre>
 
-Cliente DNS
+### Cliente DNS
 
-Servidor DNS
+### Servidor DNS
+
+### Zona Directa Forward
+
+### Zona Inversa Inverse
