@@ -285,28 +285,62 @@ nc: 192.168.0.1 7777 open
 
 ### Traducción de direcciones NAT y reenvío de puerto: port forwarding
 
+a)
+
+*VM1:*
+<pre>
+<code>$ing 172.16.0.1 -I eth0
+</code></pre>
+
+![Whireshark](ws5.png)
+
+*VM1:*
+<pre>
+<code>$ping 172.16.0.1 -I eth0
+</code></pre>
+
+*VM3:*
+<pre>
+<code>$iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+</code></pre>
+
+![Whireshark](ws6.png)
+
+Resultado:
+<pre>
+<code>Como podemos observar en la última parte, en eth1 sólo usa la IP pública que al ser dinámica y guardar la pista de las conexiones activas es capaz de cambiar a la IP privada.
+</code></pre>
 
 
+b)
+*VM1:*
+<pre>
+<code>$nc -4 -l -p 7777
+</code></pre>
 
+*VM3:*
+<pre>
+<code>$iptables  -t nat -F
+$iptables -t nat -A PREROUTING -d 172.16.0.2 -p tcp --dport 80 -j DNAT --to 192.168.0.1:7777
+</code></pre>
 
+*VM4:*
+<pre>
+<code>$nc 172.16.0.2 80
+</code></pre>
 
+Resultado (Red pública: 172.16.0.0):
 
+![Whireshark](ws7.png)
 
+<pre>
+<code> VM4 se está conectando por el puerto 80 a la máquina VM3 (Router)
+</code></pre>
 
--- 1
+Resultado (Red privada: 192.168.0.0):
 
-iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE -- VM3 (Router)
-ping 172.16.0.1 -I eth0 -- VM1
-Mientras que 192.168.0.1 se lo envia a 172.16.0.1, el router lo reenvia como si 172.16.0.3 enviara a 172.16.0.1
-La respuesta por tanto de 172.168.0.1 es a 172.16.0.3, el cual lo devuelve a 192.168.0.1
+![Whireshark](ws8.png)
 
--- 2
-
-nc -4 -l -p 7777 -- VM1
-iptables -t nat -A PREROUTING -d 172.16.0.3 -p tcp --dport 80 -j DNAT --to 192.168.0.1:7777 -- VM3
-nc 172.16.0.1 80 -- VM4
-
-Para la VM4, esta trabajado con 172.16.0.3:80
-Para el router (VM3) esta recibiendo de 172.16.0.1 a su puerto 80, y lo encamina a 192.168.0.1:7777 como si se lo enviara directamente 172.16.0.1 y no el propio router
-Para la VM1, cree recibir directamente de 172.16.0.1 por 7777, como con forwarding normal, y le responde
-El router convierte las respuestas de 192.168.0.1 por 7777 a 172.16.0.3 por 80, y las envia a 172.16.0.1
+<pre>
+<code> VM3 (Router) reedirige la conexión del puerto 80 al puerto 7777 para conectarse con VM1
+</code></pre>
