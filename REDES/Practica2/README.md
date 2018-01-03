@@ -2,11 +2,11 @@
 
 ## Tabla de contenido
 - [Topología](#topología).
-- [Preparación del entorno para la práctica](#preparación-del-entorno-para-la-practica).
+- [Preparación del entorno para la práctica](#preparación-del-entorno-para-la-práctica).
 - [Estados de una conexión TCP](#estados-de-una-conexión-tcp).
-- [Introducción a la seguridad del protocolo TCP](#introducción-a-la-seguridad-del-protocolo-TCP).
-- [Opciones y parámetros TCP](#Opciones-y-parámetros-TCP).
-- [Traducción de direcciones NAT y reenvío de puerto: port forwarding](#Traducción-de-direcciones-NAT-y-reenvío-de-puerto:-port-forwarding).
+- [Introducción a la seguridad del protocolo TCP](#introducción-a-la-seguridad-del-protocolo-tcp).
+- [Opciones y parámetros TCP](#opciones-y-parámetros-tcp).
+- [Traducción de direcciones NAT y reenvío de puerto: port forwarding](#traducción-de-direcciones-nat-y-reenvío-de-puerto-port-forwarding).
 
 ### Topología
 ![topología](topologia.png)
@@ -294,7 +294,7 @@ nc: 192.168.0.1 7777 open
 **net.ipv4.tcp_keepalive_time=75** : Intervalo entre pruebas.
 
 
-### Traducción de direcciones NAT y reenvío de puerto: port forwarding
+### Traducción de direcciones NAT y reenvío de puerto port forwarding
 
 a)
 
