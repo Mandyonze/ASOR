@@ -8,6 +8,7 @@
 
 ### Topología
 ![topología](topologia.png)
+
 ### Configuración Estática
 *********************** **Ejercicio 1** ***********************
 
@@ -203,7 +204,7 @@ iface eth0 inet dhcp
 </code></pre>
 
 
-*********************** **Ejercicio 5** *********************** 
+*********************** **Ejercicio 5** ***********************
 
 *VM4:*
 <pre>
