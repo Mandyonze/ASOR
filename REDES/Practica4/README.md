@@ -204,11 +204,17 @@ $ip a add fd00:0:0:b::1/64 dev eth1
 
 *********************** **Ejercicio 4** ***********************
 
+<pre>
+<code>
 Red fd00:0:0:a::/64 (VM1)
+</code></pre>
 
 ![tabla](tabla.png)
 
+<pre>
+<code>
 Red fd00:0:0:b::/64 (VM4)
+</code></pre>
 
 ![tabla1](tabla1.png)
 
@@ -246,5 +252,148 @@ Se han configurado automáticamente las direccones ipv6.
 
 ### Autoconfiguración Anuncio de Prefijos
 
+*********************** **Ejercicio 1** ***********************
+
+*VM1:*
+<pre>
+<code>$ip a del fd00:0:0:a::1/64 dev eth0
+$ip link set eth0 down
+</code></pre>
+
+*VM2:*
+<pre>
+<code>$ip a del fd00:0:0:a::2/64 dev eth0
+$ip link set eth0 down
+</code></pre>
+
+*VM3:*
+<pre>
+<code>$ip a del fd00:0:0:a::3/64 dev eth0
+$ip a del fd00:0:0:b::1/64 dev eth0
+$ip link set eth0 down
+$ip link set eth1 down
+</code></pre>
+
+*VM4:*
+<pre>
+<code>$ip a del fd00:0:0:b::2/64 dev eth0
+$ip link set eth0 down
+</code></pre>
+
+
+*********************** **Ejercicio 2** ***********************
+
+a)
+
+*VM3:*
+<pre>
+<code>$nano /etc/quagga/daemons
+********************************
+zebra=yes
+********************************
+</code></pre>
+
+b)
+
+*VM3:*
+<pre>
+<code>$nano /etc/quagga/zebra.conf
+********************************
+interface eth0
+  no ipv6 nd suppress-ra
+  ipv6 nd prefix fd00:0:0:a::/64
+  interface eth1
+    no ipv6 nd suppress-ra
+    ipv6 nd prefix fd00:0:0:b::/64
+********************************
+$service quagga start
+</code></pre>
+
+*********************** **Ejercicio 3** ***********************
+
+*VM4:*
+<pre>
+<code>$ip link set eth0 up
+$ip a
+</code></pre>
+
+Podemos observar cómo ha añadido una nueva dirección ipv6 a través de EUI-64 y la configuración añadida anteriormente.
+
+![ipa](ipa.png)
+
+*********************** **Ejercicio 4** ***********************
+
+a)
+
+*VM2:*
+<pre>
+<code>$ip link set eth0 up
+$ip a
+
+****Se abre WhireShark****
+
+</code></pre>
+
+b)
+
+*VM1:*
+<pre>
+<code>$ip link set eth0 up
+$ip a
+</code></pre>
+
+![ws3](ws3.png)
+
+c)
+
+**->Router Solicitation:** Una vez asignada una dirección de enlace, se envían datagramanas a la dirección multicast para definir los routers. En este caso va desde IP(VM1) hasta la dirección multicast de enlace (2). En la capa de transporte va desde MAC(VM1) a la dirección multias de IPv6 (33:33:00:00:00:02).
+
+**->Router Advertisement:** En la capa de red va de MAC(VM3) a la dirección de multicast de Ipv6 (33:33:00:00:00:01) y en la capa de red va de IP(VM3) a la dirección multicast de enlace en la interfaz del host(1) .
+
+*VM1:*
+<pre>
+<code>$ip ma
+</code></pre>
+
+![ipma](ipma.png)
+
+*********************** **Ejercicio 5** ***********************
+
+
+*VM1:*
+<pre>
+<code>$ip a del fd00::a:a00:27ff:fef2:5a8f/64 dev eth0
+$ip link set eth0 down
+$sysctl -w net.ipv6.conf.eth0.use_tempaddr=2
+$ip link set eth0 up
+$ip a
+</code></pre>
+
+![ipa2](ipa2.png)
 
 ### ICMP versión 6
+
+a)Solicitud y respuesta de eco.
+
+*VM1:*
+<pre>
+<code>$
+</code></pre>
+
+![echo1](echo1.png)
+
+b)Solicitud y anuncio de encaminador.
+
+![echo2](echo2.png)
+
+c)Solicitud y anuncio de vecino.
+
+![echo3](echo3.png)
+
+d)Destino inalcanzable - Sin ruta al destino (Code: 0).
+*VM1:*
+<pre>
+<code>$ping6 fd00:0:0:b::ff:fe00:500 -I eth0
+</code></pre>
+
+![echo4](echo4.png)
