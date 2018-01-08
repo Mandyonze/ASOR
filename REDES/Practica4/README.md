@@ -1,4 +1,4 @@
-# Práctica 1.3.Domain Name System (DNS)
+# Práctica 1.4.Protocolo IPv6
 
 ## Tabla de contenido
 - [Topología](#topología).
