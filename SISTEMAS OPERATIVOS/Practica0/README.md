@@ -5,11 +5,11 @@
 - [Variables de entorno](#variables-de-entorno).
 - [Comillas](#comillas).
 - [El path](#el-path).
-- [Manejo de cadenas y flujos de caracteres](#Manejo de cadenas y flujos de caracteres).
+- [Manejo de cadenas y flujos de caracteres](#manejo-de-cadenas-y-flujos-de-caracteres).
 - [Los comandos cat wc head tail y tr](#los-comandos-cat-wc-head-tail-y-tr).
 - [Expresiones Regulares](#expresiones-regulares).
 - [Programación en Lenguaje Shell](#programación-en-lenguaje-shell).
-- [Proyecto Agenda en Shell script](#Proyecto-agenda-en-shell-script).
+
 
 ## Comandos y secuencias de comandos
 
@@ -34,13 +34,13 @@
 
 <pre>
 <code>$echo línea uno;echo línea dos; echo línea tres
-  $ echo línea uno && echo línea dos && echo línea tres
+$ echo línea uno && echo línea dos && echo línea tres
   # Muestra las tres líneas
-  $ echo línea uno || echo línea dos; echo línea tres
+$ echo línea uno || echo línea dos; echo línea tres
   # Muestra la línea uno y luego la tres
-  $ (echo En una sub-shell; exit 0) && echo terminó bien || echo terminó mal
+$ (echo En una sub-shell; exit 0) && echo terminó bien || echo terminó mal
   # Muestra "En una sub-sell" y termina bien ya que devuelve 0.
-  $ (echo En una sub-shell; exit 1) && echo terminó bien || echo terminó mal
+$ (echo En una sub-shell; exit 1) && echo terminó bien || echo terminó mal
   # Muestra "En una sub-shell" y termina mal por que devuelve 1 (error).
 </code></pre>
 
@@ -55,7 +55,9 @@
 Algunas variables importantes:
 
 **HOME=**/home/usuario
+
 **PATH=**/usr/lib/jvm/jdk-9.0.1/bin:/home/mandy/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 **JAVA_HOME=**/usr/lib/jvm/jdk-9.0.1
 
 *********************** **Ejercicio 2** ***********************
@@ -65,13 +67,21 @@ Algunas variables importantes:
 </code></pre>
 
 **USER=** borja
+
 **UID=** 1000
+
 **HOME=** /home/borja
+
 **PWD=** /home/borja
+
 **SHELL=** /bin/bash
+
 **$=** 25193 (PID del proceso)
+
 **PPID=** 25184 (PPID del proceso)
+
 **?=** 0
+
 
 *********************** **Ejercicio 3** ***********************
 
@@ -312,12 +322,11 @@ Los caracteres anteriores se pueden escapar con \ , para encajar el patrón con 
 
 *********************** **Ejercicio 1** ***********************
 
-<pre>
-<code>$nano ej1.sh
-********************************
 
-********************************
-$chmod +x ej1.sh
+[ej1.sh](ej1.sh)
+
+<pre>
+<code>$chmod +x ej1.sh
 $./ej1.sh hola hola2
  #El programa se llama: ./ej1.sh
  # el primer argumento es: hola
@@ -329,38 +338,25 @@ $./ej1.sh "hola hola2"
  # el segundo argumento es:
 </code></pre>
 
-
-```sh
-chmod +x ej2.sh
-./ej2.sh
-```
-
-[ej1.sj][ej1.sh]
-
 *********************** **Ejercicio 2** ***********************
 
-<pre>
-<code>$nano ej2.sh
-********************************
-#!/bin/bash
-echo -e "El programa se llama: $0 \n el primer argumento es: $1 \n el segundo argumento es: $2\n"
-********************************
-$chmod +x ej2.sh
-$./ej2.sh
-</code></pre>
-
-
-## Proyecto Agenda en Shell script
-
-
-*********************** **Ejercicio #** ***********************
+a)
 
 <pre>
-<code>$
+<code>$test -f \bin\bash; echo $?
+  # 1
+$[ -f \bin\bash ]; echo $?
+  # 1
 </code></pre>
 
-*********************** **Ejercicio #** ***********************
+b)
 
-<pre>
-<code>$command shell
-</code></pre>
+[ej2.sh](ej2.sh)
+
+*********************** **Ejercicio 3** ***********************
+
+[ej3.sh](ej3.sh)
+
+*********************** **Ejercicio 4** ***********************
+
+[ej4.sh](ej4.sh)
