@@ -11,15 +11,15 @@
 
 *********************** **Ejercicio 1** ***********************
 
-[ej1](/Gestión de Errores/ej1.c)
+[ej1](Gestión de Errores/ej1.c)
 
 *********************** **Ejercicio 2** ***********************
 
-[ej2](/Gestión de Errores/ej2.c)
+[ej2](Gestión de Errores/ej2.c)
 
 *********************** **Ejercicio 3** ***********************
 
-[ej3](/Gestión de Errores/ej3.c)
+[ej3](Gestión de Errores/ej3.c)
 
 Hay 133 errores definidos en el sistema.
 
@@ -49,11 +49,11 @@ $uname -all
 
 *********************** **Ejercicio 2** ***********************
 
-[ej2](/Información del Sistema/ej2.c)
+[ej2](Información del Sistema/ej2.c)
 
 *********************** **Ejercicio 3** ***********************
 
-[ej3](/Información del Sistema/ej3.c)
+[ej3](Información del Sistema/ej3.c)
 
 **Longitud Máxima de Argumentos:** 2097152
 
@@ -64,7 +64,7 @@ $uname -all
 
 *********************** **Ejercicio 4** ***********************
 
-[ej4](/Información del Sistema/ej4.c)
+[ej4](Información del Sistema/ej4.c)
 
 **Número Máximo de Enlaces:** 65000
 
@@ -96,13 +96,13 @@ uid=1000(borja) gid=1000(borja) grupos=1000(borja),4(adm),24(cdrom),27(sudo),30(
 
 *********************** **Ejercicio 2** ***********************
 
-[ej2](/Información del Sistema/ej2.c)
+[ej2](Información del Sistema/ej2.c)
 
 El setuid se utiliza para dar privilegios elevados en determinados archivos para usuarios que no lo poseen, ocmo por ejemplo en el archivo /etc/bin/passwd para que todos puedan cambiar la contraseña pero que no puedan leer ni escribir las otras.  Por lo tanto, cuando el uid es distinto del euid tiene el bit setuid activado.
 
 *********************** **Ejercicio 3** ***********************
 
-[ej3](/Información del Sistema/ej3.c)
+[ej3](Información del Sistema/ej3.c)
 
 ## Información Horaria del Sistema
 
@@ -124,24 +124,24 @@ Formatos disponibles:
 
 *********************** **Ejercicio 2** ***********************
 
-[ej2](/Información del Sistema/ej2.c)
+[ej2](Información del Sistema/ej2.c)
 
 
 *********************** **Ejercicio 3** ***********************
 
-[ej3](/Información del Sistema/ej3.c)
+[ej3](Información del Sistema/ej3.c)
 
 
 *********************** **Ejercicio 4** ***********************
 
-[ej4](/Información del Sistema/ej4.c)
+[ej4](Información del Sistema/ej4.c)
 
 
 *********************** **Ejercicio 5** ***********************
 
-[ej5](/Información del Sistema/ej5.c)
+[ej5](Información del Sistema/ej5.c)
 
 
 *********************** **Ejercicio 6** ***********************
 
-[ej6](/Información del Sistema/ej6.c)
+[ej6](Información del Sistema/ej6.c)
