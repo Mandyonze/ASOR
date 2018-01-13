@@ -208,7 +208,7 @@ ls 2>&1 > dirlist: Redirecciona la salida de error a la salida estándar y la sa
 
 *********************** **Ejercicio 2** ***********************
 
-[ej2](Cerrojos de ficheros/ej2.c)
+[ej2](Cerrojos_de_ficheros/ej2.c)
 
 *********************** **Ejercicio 3** ***********************
 
