@@ -1,5 +1,8 @@
 # Práctica 2.1.Introducción a la programación de Sistemas UNIX
 
+
+[ej5](prueba/aas.c)
+
 ## Tabla de contenido
 - [Creación y atributos de ficheros](#creación-y-atributos-de-ficheros).
 - [Redirecciones y duplicación de descriptores](#redirecciones-y-duplicación-de-descriptores).
