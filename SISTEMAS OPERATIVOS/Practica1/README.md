@@ -1,7 +1,7 @@
 # Práctica 2.1.Introducción a la programación de Sistemas UNIX
 
 ## Tabla de contenido
-- [Gestión de Errores](#destión-de-errores).
+- [Gestión de Errores](#gestión-de-errores).
 - [Información del Sistema](#información-del-sistema).
 - [Información del Usuario](#información-del-usuario).
 - [Información Horaria del Sistema](#información-horaria-del-sistema).
@@ -26,6 +26,7 @@ Hay 133 errores definidos en el sistema.
 ## Información del Sistema
 
 *********************** **Ejercicio 1** ***********************
+
 <pre>
 <code>$man uname
 $uname -all
