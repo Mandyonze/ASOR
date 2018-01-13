@@ -70,7 +70,7 @@ bash: cd: test/: Permiso denegado
 
 *********************** **Ejercicio 5** ***********************
 
-[ej5](Creación y atributos de ficheros/ej5.c)
+[ej5](Creación_y_atributos_de_ficheros/ej5.c)
 
 *********************** **Ejercicio 6** ***********************
 
@@ -80,11 +80,11 @@ bash: cd: test/: Permiso denegado
 
 umask te devuelve el valor del octal en decimal.
 
-[ej6](Creación y atributos de ficheros/ej6.c)
+[ej6](Creación_y_atributos_de_ficheros/ej6.c)
 
 *********************** **Ejercicio 7** ***********************
 
-[ej7](Creación y atributos de ficheros/ej7.c)
+[ej7](Creación_y_atributos_de_ficheros/ej7.c)
 
 *********************** **Ejercicio 8** ***********************
 
@@ -95,7 +95,7 @@ umask te devuelve el valor del octal en decimal.
 
 *********************** **Ejercicio 9** ***********************
 
-[ej9](Creación y atributos de ficheros/ej9.c)
+[ej9](Creación_y_atributos_de_ficheros/ej9.c)
 
 **st_atime:** es el último acceso (cuando se hace open por ejemplo).
 
@@ -150,17 +150,17 @@ rm -rf archivosim #No pasa nada
 
 *********************** **Ejercicio 11** ***********************
 
-[ej11](Creación y atributos de ficheros/ej11.c)
+[ej11](Creación_y_atributos_de_ficheros/ej11.c)
 
 ## Redirecciones y duplicación de descriptores
 
 *********************** **Ejercicio 1** ***********************
 
-[ej1](Redirecciones y duplicación de descriptores/ej1.c)
+[ej1](Redirecciones_y_duplicación_de_descriptores/ej1.c)
 
 *********************** **Ejercicio 2** ***********************
 
-[ej2](Redirecciones y duplicación de descriptores/ej2.c)
+[ej2](Redirecciones_y_duplicación_de_descriptores/ej2.c)
 
 ls > dirlist 2>&1: Redirecciona la salida estándar a dirlist y luego la salida de errores la redirecciona a la 1 que corresponde a dirlist. Por lo tanto,, ambas salidas se van a ver en dirlist.
 ls 2>&1 > dirlist: Redirecciona la salida de error a la salida estándar y la salida estándar a dirlist, por lo tanto los errores se van a ver por pantalla y la salina normal en el fichero dirlist.
@@ -220,4 +220,4 @@ Sirve para crear cerrojos en scripts de shell.
 
 ## Proyecto Comando ls extendido
 
-[ls.c](Ls extendido/ls.c)
+[ls.c](Ls_extendido/ls.c)
