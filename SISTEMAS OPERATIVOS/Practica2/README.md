@@ -1,7 +1,4 @@
-# Práctica 2.1.Introducción a la programación de Sistemas UNIX
-
-
-[ej5](prueba/aas.c)
+# Práctica 2.3.Procesos
 
 ## Tabla de contenido
 - [Creación y atributos de ficheros](#creación-y-atributos-de-ficheros).
@@ -46,8 +43,11 @@
 drwxr-xr-x 3 mandy mandy 4096 ene 11 09:20 .
 
 **Tipo:** Directorio.
+
 **rmx_propietario:** lectura, escritura y ejecución.
+
 **rmx_grupo:** ejecución y lectura.
+
 **rmx_resto:** ejecución.
 
 *********************** **Ejercicio 3** ***********************
@@ -106,6 +106,7 @@ umask te devuelve el valor del octal en decimal.
 *********************** **Ejercicio 10** ***********************
 
 **Enlace Duro:** Es un nuevo nombre para un fichero, apunta al mismo nodo i y no ocupan espacio en el disco.
+
 **Enlace Simbólico:** El archivo con enlace simbólico contiene la ruta del archivo al que se le ha hecho el enlace.
 
 a)
@@ -163,6 +164,7 @@ rm -rf archivosim #No pasa nada
 [ej2](Redirecciones_y_duplicación_de_descriptores/ej2.c)
 
 ls > dirlist 2>&1: Redirecciona la salida estándar a dirlist y luego la salida de errores la redirecciona a la 1 que corresponde a dirlist. Por lo tanto,, ambas salidas se van a ver en dirlist.
+
 ls 2>&1 > dirlist: Redirecciona la salida de error a la salida estándar y la salida estándar a dirlist, por lo tanto los errores se van a ver por pantalla y la salina normal en el fichero dirlist.
 
 *********************** **Ejercicio  3** ***********************
