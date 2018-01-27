@@ -1,4 +1,4 @@
-# Práctica 2.2.Sistema de ficheros
+# Práctica 2.3.Procesos
 
 ## Tabla de contenido
 - [Políticas de planificación](#políticas-de-planificación).
