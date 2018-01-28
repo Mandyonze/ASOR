@@ -7,7 +7,7 @@
 - [Configuración Dinámica de Hosts](#configuración-dinámica-de-hosts).
 
 ### Topología
-![topología](topologia.png)
+![imágenes/topología](topologia.png)
 
 ### Configuración Estática
 *********************** **Ejercicio 1** ***********************
