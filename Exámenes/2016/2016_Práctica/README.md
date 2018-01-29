@@ -24,7 +24,6 @@ $ip a add 10.0.0.2/24 dev eth1
 $ip a add 172.16.0.1/24 dev eth0
 </code></pre>
 
-
 *VM1:*
 <pre>
 <code>$ping 192.168.0.130
@@ -67,3 +66,24 @@ $service quagga start
 ![ipr](imágenes/ipr.png)
 
 ![ipr2](imágenes/ipr2.png)
+
+*********************** **Ejercicio 3** ***********************
+
+*Router1 y Router2:*
+<pre>
+<code>$sysctl net.ipv4.ip_forward=1
+</code></pre>
+
+*VM1:*
+<pre>
+<code>$ip route add 10.0.0.0/24 via 192.168.0.130
+$ping 10.0.0.2
+</code></pre>
+
+*********************** **Ejercicio 4** ***********************
+
+[ej4](ej4.c)
+
+*********************** **Ejercicio 5** ***********************
+
+[ej5](ej5.c)

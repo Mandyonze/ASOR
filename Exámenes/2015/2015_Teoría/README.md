@@ -7,13 +7,13 @@ Para enviar un datagrama IPv6 a todos los nodos de enlace necesitamos una direcc
 *********************** **Ejercicio 2** ***********************
 
 | Destino | Distancia | Encaminador|
-| ----- | ---- |
+| ----- | ---- | ---- |
 | 192.168.1.0 | 1 | - |
-| 192.168.2.0 | 3 | 192.168.3.1 |
+| 192.168.2.0 | 4 | 192.168.3.1 |
 | 192.168.3.0 | 1 | - |
-| 192.168.4.0 | 1 | 192.168.3.1 |
-| 192.168.5.0 | 5 | 192.168.3.1 |
-| 192.168.6.0 | 6 | 192.168.3.1 |
+| 192.168.4.0 | 2 | 192.168.3.1 |
+| 192.168.5.0 | 6 | 192.168.3.1 |
+| 192.168.6.0 | 7 | 192.168.3.1 |
 
 *********************** **Ejercicio 3** ***********************
 
@@ -31,7 +31,7 @@ Las señales no capturadas por el proceso son gestionadas por el kernel que llam
 
 *********************** **Ejercicio 6** ***********************
 
-Un servidor TCP puede antender varias conexiones simultáneas a traves de accept-and-fork o prefork. La primera significa que cuando se conecta un cliente y el servidor lo acepta se crea un proceso hijo que maneja la comunicación. La segunda significa que cada hijo gestiona el accept y administra las comunicaciones. 
+Un servidor TCP puede antender varias conexiones simultáneas a traves de accept-and-fork o prefork. La primera significa que cuando se conecta un cliente y el servidor lo acepta se crea un proceso hijo que maneja la comunicación. La segunda significa que cada hijo gestiona el accept y administra las comunicaciones.
 
 *********************** **Ejercicio 7** ***********************
 

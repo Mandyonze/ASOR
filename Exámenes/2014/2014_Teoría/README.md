@@ -16,11 +16,11 @@ ULA de ámbito de sitio local (Pertenece a FC00::/7)
 
 d) ff02::1
 
-Multicast (Pertenece a FF00::/8) Esta dirección representa todos los interfaces de enlace local.
+Multicast permanente de ámbito de enlace local(Pertenece a FF00::/8) Esta dirección representa todos los interfaces de enlace local.
 
 e) ff12::1180:add2
 
-Multicast (Pertenece a FF00::/8).
+Multicast temporal de ámbito de enlace local(Pertenece a FF00::/8).
 
 *********************** **Ejercicio 2** ***********************
 
@@ -32,18 +32,18 @@ En cuanto al problema de privacidad viene dado a que se comparte a través de la
 
 *********************** **Ejercicio 3** ***********************
 
-El protocolo ARP de IPv4 se lleva a cabo una vez configurada la red, cuando nos intentamos conectar con otro host, necesitamos conocer la dirección MAC asociada a la dirección IP destino, para ello se manda el mensaje a todas las direcciones bradcast lo que hace que se llene de bastante tráfico. Por otro lado, el descubrimiento de vecinos de IPv6, sirve para configurar la red y para asociar las MAC con las IPs, pero hace una llamada de broadcast a las direcciones del mismo ámbito (fe00::1) y además a las direcciones de nodo solicitado creadas dinámicamente.
+El protocolo ARP de IPv4 se lleva a cabo una vez configurada la red, cuando nos intentamos conectar con otro host, necesitamos conocer la dirección MAC asociada a la dirección IP destino, para ello se manda el mensaje a todas las direcciones bradcast lo que hace que se llene de bastante tráfico. Por otro lado, el descubrimiento de vecinos de IPv6, sirve para configurar la red y para asociar las MAC con las IPs, pero hace una llamada de broadcast a las direcciones del mismo ámbito (ff02::2) y además a las direcciones de nodo solicitado creadas dinámicamente.
 
 *********************** **Ejercicio 4** ***********************
 
 | Destino | Distancia | Encaminador|
 | ----- | ---- | ---- |
 | 192.168.1.0 | 1 | - |
-| 192.168.2.0 | 3 | 192.168.3.1 |
+| 192.168.2.0 | 4 | 192.168.3.1 |
 | 192.168.3.0 | 1 | - |
-| 192.168.4.0 | 1 | 192.168.3.1 |
-| 192.168.5.0 | 5 | 192.168.3.1 |
-| 192.168.6.0 | 6 | 192.168.3.1 |
+| 192.168.4.0 | 2 | 192.168.3.1 |
+| 192.168.5.0 | 6 | 192.168.3.1 |
+| 192.168.6.0 | 7 | 192.168.3.1 |
 
 *********************** **Ejercicio 5** ***********************
 
