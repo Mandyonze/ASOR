@@ -1,6 +1,7 @@
 # ASOR - Febrero 2014 - Teoría
 
 *********************** **Ejercicio 1** ***********************
+
 a) fe80::218:43ff:fe25:de20
 
 Enlace local (Pertenece a fe80::/10)
@@ -16,6 +17,7 @@ ULA de ámbito de sitio local (Pertenece a FC00::/7)
 d) ff02::1
 
 Multicast (Pertenece a FF00::/8) Esta dirección representa todos los interfaces de enlace local.
+
 e) ff12::1180:add2
 
 Multicast (Pertenece a FF00::/8).
@@ -35,7 +37,7 @@ El protocolo ARP de IPv4 se lleva a cabo una vez configurada la red, cuando nos 
 *********************** **Ejercicio 4** ***********************
 
 | Destino | Distancia | Encaminador|
-| ----- | ---- |
+| ----- | ---- | ---- |
 | 192.168.1.0 | 1 | - |
 | 192.168.2.0 | 3 | 192.168.3.1 |
 | 192.168.3.0 | 1 | - |
