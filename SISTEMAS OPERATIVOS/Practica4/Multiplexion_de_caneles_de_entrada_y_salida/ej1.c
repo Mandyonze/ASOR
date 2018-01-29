@@ -24,8 +24,6 @@ int main(){
 	char *tuberia2 = "tuberia2";
   mkfifo(tuberia2, 0644);
 
-
-
   char buffer[257];
 
   //Abrimos ambas tuberias, el parametro O_NONBLOCK sirve evitar el el archivo se abra para lectura y se bloquee para escritura.
