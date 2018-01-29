@@ -57,7 +57,7 @@ $ip a add 192.168.0.1/24 dev eth0
 
 Resultado:
 
-![Tabla 1](tabla1.png)
+![Tabla 1](imágenes/tabla1.png)
 
 *********************** **Ejercicio 4** ***********************
 
@@ -129,11 +129,11 @@ Resultado:
 
 Red 10.0.0.0/24 - VM1
 
-![Tabla 2](tabla2.png)
+![Tabla 2](imágenes/tabla2.png)
 
 Red 192.168.0.0/24 - VM1
 
-![Tabla 3](tabla3.png)
+![Tabla 3](imágenes/tabla3.png)
 
 ### Configuración Dinámica de Hosts
 
@@ -183,9 +183,10 @@ $service isc-dhcp-server start
 
 Resultado:
 
-![Tabla 4](tabla4.png)
+![Tabla 4](imágenes/tabla4.png)
 
 *********************** **Ejercicio 4** ***********************
+
 Resultado:
 <pre>
 <code>El request se hace del Router 3 al Host (VM1) sirve para comprobar que la ip ofertada está en la misma red.
@@ -203,8 +204,7 @@ iface eth0 inet dhcp
 ***********************************************************
 </code></pre>
 
-
-*********************** **Ejercicio 5** ***********************
+*********************** **Ejercicio 6** ***********************
 
 *VM4:*
 <pre>

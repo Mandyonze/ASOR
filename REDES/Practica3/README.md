@@ -9,7 +9,7 @@
   - [Zona Inversa Inverse](#zona-inversa-inverse).
 
 ### Topología
-![topología](topologia.png)
+![topología](imágenes/topologia.png)
 
 ### Preparación del entorno para la práctica
 
@@ -82,7 +82,7 @@ Resultado:
 ucm.es.			86400	IN	A	147.96.1.15
 </code></pre>
 
-![tabla1](tabla1.png)
+![tabla1](imágenes/tabla1.png)
 
 
 *********************** **Ejercicio 3** ***********************
@@ -98,7 +98,7 @@ Nameservers (Specify myself): crispin.sim.ucm.es.
 
 Resultado:
 
-![SOA](SOA.png)
+![SOA](imágenes/SOA.png)
 
 *********************** **Ejercicio 4** ***********************
 
@@ -113,7 +113,7 @@ Nameservers (Specify myself): crispin.sim.ucm.es.
 
 Resultado:
 
-![MX](MX.png)
+![MX](imágenes/MX.png)
 
 *********************** **Ejercicio 5** ***********************
 
@@ -149,7 +149,7 @@ Resultado:
 </code></pre>
 
 
-![tabla2](tabla2.png)
+![tabla2](imágenes/tabla2.png)
 
 
 *********************** **Ejercicio 6** ***********************
@@ -167,7 +167,7 @@ Resultadado:
 <code>www.google.com está en:  172.217.4.228
 </code></pre>
 
-![tracegoogle](tracegoogle.png)
+![tracegoogle](imágenes/tracegoogle.png)
 
 ### Servidor DNS
 
@@ -188,7 +188,7 @@ zone "labfdi.es" {
   file "/etc/bind/db.labfdi.es";
 };
 ***************************************
-$named-checkconf /etc/bind/named.conf
+$named-checkconf
 </code></pre>
 
 *********************** **Ejercicio 2** ***********************
@@ -197,24 +197,25 @@ $named-checkconf /etc/bind/named.conf
 <pre>
 <code>$nano /etc/bind/db.labfdi.es
 ***************************************
-$TTL    604800
-labfdi.es.       IN      SOA     ns.labfdi.es. hostmaster.labfdi.es. (
-                              2         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
-;
-@                     IN      NS      ns.labfdi.es.
-ns.labfdi.es.         IN      A       192.168.0.1
-@                     IN      A       192.168.0.200
-@                     IN      AAAA    fd00::1
-@                     IN      MX      10 mail.labfdi.es.
-mail.labfdi.es.       IN      A       192.168.0.250
-servidor.labfdi.es.   IN      CNAME   mail.labfdi.es.
+$TTL    2d
+labfdi.es.      IN      SOA     ns.labfdi.es. hostmaster.labfdi.es. (
+                        2003004         ; Serial
+                             3h         ; Refresh
+                            14M         ; Retry
+                          3W12h         ; Expire
+                          2h20M         ; Negative Cacha TTL
+                          )
+                IN      NS      ns.labfdi.es.
+ns.labfdi.es.   IN      A       192.168.0.1
+www.labfdi.es.  IN      A       192.168.0.200
+www.labfdi.es.  IN      AAAA    fd00::1
+                IN      MX      10      mail.labfdi.es.
+mail.labfdi.es. IN      A       192.168.0.250
+ser.labfdi.es.   IN      CNAME   mail.labfdi.es.
+
 
 ***************************************
-$named-checkzone labfdi.es /etc/bind/named.conf
+$named-checkzone labfdi.es. /etc/bind/db.labfdi.es
 </code></pre>
 
 
@@ -222,7 +223,7 @@ $named-checkzone labfdi.es /etc/bind/named.conf
 
 *VM1:*
 <pre>
-<code>$sudo service bind9 restart
+<code>$sudo service bind9 start
 </code></pre>
 
 *********************** **Ejercicio 4** ***********************
@@ -243,9 +244,11 @@ $dig  www.labfdi.es
 *VM2:*
 <pre>
 $dig  www.labfdi.es
+$dig labfdi.es.
+$dig ser.labfdi.es.
 </code></pre>
 
-![diglab](diglab.png)
+![diglab](imágenes/diglab.png)
 
 *********************** **Ejercicio 6** ***********************
 
@@ -254,7 +257,7 @@ $dig  www.labfdi.es
 $dig  www.labfdi.es
 </code></pre>
 
-![diglab1](diglab1.png)
+![diglab1](imágenes/diglab2.png)
 
 ### Zona Inversa Inverse
 
@@ -285,7 +288,7 @@ $named-checkconf /etc/bind/named.conf
 
 *VM1:*
 <pre>
-<code>$nano /etc/bind/0.168.192.db
+<code>$nano /etc/bind/db.0.168.192
 ***************************************
 $TTL    604800
 0.168.192.in-addr.arpa. IN SOA ns.labfdi.es. hostmaster.labfdi.es. (
@@ -301,7 +304,7 @@ $TTL    604800
 200                   IN      PTR     labfdi.es.
 250                   IN      PTR     mail.labfdi.es.
 ***************************************
-$named-checkzone 0.168.192.in-addr.arpa. /etc/bind/0.168.192.db
+$named-checkzone 0.168.192.in-addr.arpa. /etc/bind/db.0.168.192
 </code></pre>
 
 *********************** **Ejercicio 3** ***********************
@@ -318,4 +321,4 @@ $named-checkzone 0.168.192.in-addr.arpa. /etc/bind/0.168.192.db
 $dig  250.0.168.192.in-addr.arpa.
 </code></pre>
 
-![diglab3](diglab.png)
+![diglab3](imágenes/diglab3.png)

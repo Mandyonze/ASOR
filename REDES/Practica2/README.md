@@ -9,7 +9,7 @@
 - [Traducción de direcciones NAT y reenvío de puerto: port forwarding](#traducción-de-direcciones-nat-y-reenvío-de-puerto-port-forwarding).
 
 ### Topología
-![topología](topologia.png)
+![topología](imágenes/topologia.png)
 
 ### Preparación del entorno para la práctica
 
@@ -88,6 +88,7 @@ tcp 0 0 localhost:7777  localhost:57991 ESTABLISHED
 </code></pre>
 
 b)
+
 *VM2:*
 <pre>
 <code>$nc 192.168.0.1 7777
@@ -103,7 +104,7 @@ Resultado:
 <code>tcp 0 0 192.168.0.1:7777 192.168.0.2:60988 ESTABLISHED
 </code></pre>
 
-![Whireshark](ws1.png)
+![Whireshark](imágenes/ws1.png)
 
 *********************** **Ejercicio 4** ***********************
 
@@ -122,6 +123,7 @@ timewait (58,64/0/
 *********************** **Ejercicio 5** ***********************
 
 a)
+
 *VM1:*
 No dejar salir ninguna conexión con los Flags ACK o SYN activados.
 <pre>
@@ -148,6 +150,7 @@ Resultado (VM2):
 </code></pre>
 
 b)
+
 *VM1:*
 <pre>
 <code>$iptables -F
@@ -196,7 +199,7 @@ Resultado:
 </code></pre>
 
 Resultado:
-![Whireshark](ws2.png)
+![Whireshark](imágenes/ws2.png)
 
 
 
@@ -220,7 +223,7 @@ Resultado:
 telnet: Unable to connect to remote host: Connection timed out
 </code></pre>
 
-![Whireshark](ws2.png)
+![Whireshark](imágenes/ws2.png)
 
 *VM1:*
 <pre>
@@ -237,14 +240,10 @@ telnet: Unable to connect to remote host: Connection timed out
 <code>$telnet localhost
 </code></pre>
 
-Resultado:
-<pre>
-<code>Ya nos podemos conectar por Telnet.
-</code></pre>
+Ya nos podemos conectar por Telnet.
 
 
-
-*********************** **Ejercicio 1** ***********************
+*********************** **Ejercicio 2** ***********************
 
 *VM1:*
 <pre>
@@ -254,20 +253,20 @@ Resultado:
 *VM2:*
 <pre>
 <code>$nc -l -p 7777
-root@frontend:~# nc -z -v 192.168.0.1 7775
-nc: inverse lookup failed for 192.168.0.1: Fallo temporal en la resolución del nombre
-nc: cannot connect to 192.168.0.1 7775: Conexión rehusada
-nc: unable to connect to address 192.168.0.1, service 7775
-root@frontend:~# nc -z -v 192.168.0.1 7776
-nc: inverse lookup failed for 192.168.0.1: Fallo temporal en la resolución del nombre
-nc: cannot connect to 192.168.0.1 7776: Conexión rehusada
-nc: unable to connect to address 192.168.0.1, service 7776
-root@frontend:~# nc -z -v 192.168.0.1 7777
-nc: inverse lookup failed for 192.168.0.1: Fallo temporal en la resolución del nombre
-nc: 192.168.0.1 7777 open
+$nc -z -v 192.168.0.1 7775
+  nc: inverse lookup failed for 192.168.0.1: Fallo temporal en la resolución del nombre
+  nc: cannot connect to 192.168.0.1 7775: Conexión rehusada
+  nc: unable to connect to address 192.168.0.1, service 7775
+$nc -z -v 192.168.0.1 7776
+  nc: inverse lookup failed for 192.168.0.1: Fallo temporal en la resolución del nombre
+  nc: cannot connect to 192.168.0.1 7776: Conexión rehusada
+  nc: unable to connect to address 192.168.0.1, service 7776
+$nc -z -v 192.168.0.1 7777
+  nc: inverse lookup failed for 192.168.0.1: Fallo temporal en la resolución del nombre
+  nc: 192.168.0.1 7777 open
 </code></pre>
 
-![Whireshark](ws4.png)
+![Whireshark](imágenes/ws4.png)
 
 ### Opciones y parámetros TCP
 
@@ -291,39 +290,40 @@ nc: 192.168.0.1 7777 open
 
 **net.ipv4.tcp_keepalive_time=7200** : Tiempo necesario (en silencio) para revisar si una conexion sigue viva.
 **net.ipv4.tcp_keepalive_probes=9** : Numero de pruebas tras el tiempo anterior superado, para ver si sigue viva la conexión.
-**net.ipv4.tcp_keepalive_time=75** : Intervalo entre pruebas.
+**net.ipv4.tcp_keepalive_intvl=75** : Intervalo entre pruebas.
 
 
 ### Traducción de direcciones NAT y reenvío de puerto port forwarding
 
-a)
 
-*VM1:*
-<pre>
-<code>$ing 172.16.0.1 -I eth0
-</code></pre>
-
-![Whireshark](ws5.png)
-
-*VM1:*
-<pre>
-<code>$ping 172.16.0.1 -I eth0
-</code></pre>
+*********************** **Ejercicio 1** ***********************
 
 *VM3:*
 <pre>
 <code>$iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 </code></pre>
 
-![Whireshark](ws6.png)
+*VM1:*
+<pre>
+<code>$ping 172.16.0.1 -I eth0
+</code></pre>
+
+![Whireshark](imágenes/ws5.png)
+
+*VM1:*
+<pre>
+<code>$ping 172.16.0.1 -I eth0
+</code></pre>
+
+![Whireshark](imágenes/ws6.png)
 
 Resultado:
 <pre>
 <code>Como podemos observar en la última parte, en eth1 sólo usa la IP pública que al ser dinámica y guardar la pista de las conexiones activas es capaz de cambiar a la IP privada.
 </code></pre>
 
+*********************** **Ejercicio 2** ***********************
 
-b)
 *VM1:*
 <pre>
 <code>$nc -4 -l -p 7777
@@ -342,7 +342,7 @@ $iptables -t nat -A PREROUTING -d 172.16.0.2 -p tcp --dport 80 -j DNAT --to 192.
 
 Resultado (Red pública: 172.16.0.0):
 
-![Whireshark](ws7.png)
+![Whireshark](imágenes/ws7.png)
 
 <pre>
 <code> VM4 se está conectando por el puerto 80 a la máquina VM3 (Router)
@@ -350,7 +350,7 @@ Resultado (Red pública: 172.16.0.0):
 
 Resultado (Red privada: 192.168.0.0):
 
-![Whireshark](ws8.png)
+![Whireshark](imágenes/ws8.png)
 
 <pre>
 <code> VM3 (Router) reedirige la conexión del puerto 80 al puerto 7777 para conectarse con VM1

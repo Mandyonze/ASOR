@@ -21,7 +21,7 @@ Prácticas de la asignatura Ampliación de Sistemas Operativos y Redes (ASOR) de
 ### Imágenes
 
 <pre>
-<code>![descripción](imagen.png)
+<code>![descripción](imágenes/imagen.png)
 </code></pre>
 
 

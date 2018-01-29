@@ -10,7 +10,7 @@
 - [ICMP versión 6](#icmp-versión-6).
 
 ### Topología
-![topología](topologia.png)
+![topología](imágenes/topologia.png)
 
 ### Dirección de enlace local
 
@@ -21,14 +21,14 @@
 <code>$ip link set eth0 up
 </code></pre>
 
-*VM2:*
-<pre>
-<code>$ip link set eth0 up
-</code></pre>
-
 Resultado(VM1):
 <pre>
 <code>fe80::a00:27ff:fef2:5a8f/64
+</code></pre>
+
+*VM2:*
+<pre>
+<code>$ip link set eth0 up
 </code></pre>
 
 Resultado(VM2):
@@ -52,11 +52,11 @@ Resultado(VM2):
 </code></pre>
 
 WhireShark:
-![ws1](ws1.png)
+![ws1](imágenes/ws1.png)
 
 Podemos ver los siguientes datagramas:
 
-**->Neighbor Solicitation:** Cuando se ha levantado la interfaz se ha enviado los datagramadas usados en el protocolo ode descubrimiento de vecinos. Se envían los datagramas desde la dirección :: que indica que la interfaz aún no tiene ninguna dirección asignada a la dirección multicas de enlace y a la dirección calculada en funciñon de la dirección unicast del nodo (FF02::1:FFXX:XXXX).
+**->Neighbor Solicitation:** Cuando se ha levantado la interfaz se ha enviado los datagramadas usados en el protocolo de descubrimiento de vecinos. Se envían los datagramas desde la dirección :: que indica que la interfaz aún no tiene ninguna dirección asignada a la dirección multicast de enlace y a la dirección calculada en funciñon de la dirección unicast del nodo (FF02::1:FFXX:XXXX).
 
 **->Router Solicitation:** Una vez asignada una dirección de enlace, se envían datagramanas a la dirección multicast para definir los routers.
 
@@ -92,7 +92,7 @@ $ip a add fd00:0:0:a::2/64 dev eth0
 $ping6 fd00:0:0:a::2 -I eth0
 </code></pre>
 
-![ws2](ws2.png)
+![ws2](imágenes/ws2.png)
 
 
 *********************** **Ejercicio 3** ***********************
@@ -113,14 +113,14 @@ $ip link set eth1 up
 <code>$ping6 fe80::a00:27ff:feff:f43d  -I eth0
 </code></pre>
 
-![ping](ping.png)
+![ping](imágenes/ping.png)
 
 *VM3:*
 <pre>
 <code>$ping6 fe80::a00:27ff:fee7:2755  -I eth1
 </code></pre>
 
-![ping2](ping2.png)
+![ping2](imágenes/ping2.png)
 
 *********************** **Ejercicio 4** ***********************
 
@@ -142,21 +142,21 @@ $ip a add fd00:0:0:b::1/64 dev eth1
 <code>$ping6 fd00:0:0:a::1  -I eth0
 </code></pre>
 
-![ping3](ping3.png)
+![ping3](imágenes/ping3.png)
 
 *VM3:*
 <pre>
 <code>$ping6 fd00:0:0:b::2  -I eth1
 </code></pre>
 
-![ping4](ping4.png)
+![ping4](imágenes/ping4.png)
 
 *VM1:*
 <pre>
 <code>$ping6 fd00:0:0:b::2  -I eth0
 </code></pre>
 
-![ping5](ping5.png)
+![ping5](imágenes/ping5.png)
 
 ### Encaminamiento estático
 
@@ -167,7 +167,7 @@ $ip a add fd00:0:0:b::1/64 dev eth1
 <code>$ip route -6
 </code></pre>
 
-![route](route.png)
+![route](imágenes/route.png)
 
 
 *VM3:*
@@ -175,7 +175,7 @@ $ip a add fd00:0:0:b::1/64 dev eth1
 <code>$ip route -6
 </code></pre>
 
-![route1](route1.png)
+![route1](imágenes/route1.png)
 
 *********************** **Ejercicio 2** ***********************
 
@@ -209,17 +209,16 @@ $ip a add fd00:0:0:b::1/64 dev eth1
 Red fd00:0:0:a::/64 (VM1)
 </code></pre>
 
-![tabla](tabla.png)
+![tabla](imágenes/tabla.png)
 
 <pre>
 <code>
 Red fd00:0:0:b::/64 (VM4)
 </code></pre>
 
-![tabla1](tabla1.png)
+![tabla1](imágenes/tabla1.png)
 
 ### Configuración Persistente
-
 
 *********************** **Ejercicio 1** ***********************
 
@@ -319,7 +318,7 @@ $ip a
 
 Podemos observar cómo ha añadido una nueva dirección ipv6 a través de EUI-64 y la configuración añadida anteriormente.
 
-![ipa](ipa.png)
+![ipa](imágenes/ipa.png)
 
 *********************** **Ejercicio 4** ***********************
 
@@ -342,7 +341,7 @@ b)
 $ip a
 </code></pre>
 
-![ws3](ws3.png)
+![ws3](imágenes/ws3.png)
 
 c)
 
@@ -355,7 +354,7 @@ c)
 <code>$ip ma
 </code></pre>
 
-![ipma](ipma.png)
+![ipma](imágenes/ipma.png)
 
 *********************** **Ejercicio 5** ***********************
 
@@ -369,31 +368,31 @@ $ip link set eth0 up
 $ip a
 </code></pre>
 
-![ipa2](ipa2.png)
+![ipa2](imágenes/ipa2.png)
 
 ### ICMP versión 6
 
-a)Solicitud y respuesta de eco.
+- Solicitud y respuesta de eco.
 
 *VM1:*
 <pre>
-<code>$
+<code>$ping6 fd00:0:0:b::2  -I eth0
 </code></pre>
 
-![echo1](echo1.png)
+![echo1](imágenes/echo1.png)
 
-b)Solicitud y anuncio de encaminador.
+- Solicitud y anuncio de encaminador.
 
-![echo2](echo2.png)
+![echo2](imágenes/echo2.png)
 
-c)Solicitud y anuncio de vecino.
+- Solicitud y anuncio de vecino.
 
-![echo3](echo3.png)
+![echo3](imágenes/echo3.png)
 
-d)Destino inalcanzable - Sin ruta al destino (Code: 0).
+- Destino inalcanzable - Sin ruta al destino (Code: 0).
 *VM1:*
 <pre>
 <code>$ping6 fd00:0:0:b::ff:fe00:500 -I eth0
 </code></pre>
 
-![echo4](echo4.png)
+![echo4](imágenes/echo4.png)
