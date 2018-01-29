@@ -49,6 +49,8 @@ int main (int argc, char**argv) {
 
   freeaddrinfo(result);
 
+  signal(SIGCHLD, hler);
+  
   char buf[2];
   char host[NI_MAXHOST];
   char serv[NI_MAXSERV];

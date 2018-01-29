@@ -285,12 +285,16 @@ $tail -F dmesg
 ## Expresiones Regulares
 
 **Caracteres y grupos de caracteres:** Ejemplos: a, b, [aA], [0-9], [A-Za-z], [:blank:], [:alnum:]
+
 **Posicionamiento (anclas):** ^ ppio de línea, $ final de línea, \< ppio de palabra, \> final de
-palabra
+palabra.
+
 **Wildcards:** . cualquier carácter, * el patrón anterior 0 o más veces, + el patrón anterior 1 o
 más veces.
+
 **Repeticiones:** {N} {N,} {N,M} el patrón se repite N veces, N veces o más, N veces y no más de
 M.
+
 Los caracteres anteriores se pueden escapar con \ , para encajar el patrón con el propio carácter.
 
 *********************** **Ejercicio 1** ***********************
@@ -323,7 +327,7 @@ Los caracteres anteriores se pueden escapar con \ , para encajar el patrón con 
 *********************** **Ejercicio 1** ***********************
 
 
-[ej1.sh](ej1.sh)
+[ej1.sh](scripts/ej1.sh)
 
 <pre>
 <code>$chmod +x ej1.sh
@@ -351,12 +355,12 @@ $[ -f \bin\bash ]; echo $?
 
 b)
 
-[ej2.sh](ej2.sh)
+[ej2.sh](scripts/ej2.sh)
 
 *********************** **Ejercicio 3** ***********************
 
-[ej3.sh](ej3.sh)
+[ej3.sh](scripts/ej3.sh)
 
 *********************** **Ejercicio 4** ***********************
 
-[ej4.sh](ej4.sh)
+[ej4.sh](scripts/ej4.sh)
